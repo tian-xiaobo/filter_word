@@ -1,0 +1,11 @@
+#!/usr/bin/env ruby
+require_relative '../lib/filter_word/rseg'
+
+input = ARGV[0]
+
+if input.nil? || input == ''
+  puts "Usage: rseg <text>"
+  exit
+end
+
+puts Rseg.new(input, model).segment.inspect
